@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using validation_approaches.ModelBindingValidation;
 
 namespace validation_approaches.Controllers
 {
@@ -28,6 +29,18 @@ namespace validation_approaches.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        //Model binding validation
+        [HttpPost]
+        public ActionResult Post(Person person)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return Ok();
         }
     }
 }
