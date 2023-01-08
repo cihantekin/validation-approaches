@@ -42,5 +42,12 @@ namespace validation_approaches.Controllers
 
             return Ok();
         }
+
+        //ActionFilter usage. See program.cs how it is implemented for all controllers to validate request
+        [HttpPost("ActionFilterTestMethod")]
+        public ActionResult ActionFilterTestMethod(Person person)
+        {
+            return Ok();
+        }
     }
 }
