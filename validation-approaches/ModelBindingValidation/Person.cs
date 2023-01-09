@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using validation_approaches.CustomAttributes;
 
 namespace validation_approaches.ModelBindingValidation
 {
     public class Person
     {
         [Required]
+        [FullNameValidator]
         public string FullName { get; set; }
 
         [EmailAddress]
