@@ -6,7 +6,7 @@ namespace validation_approaches.FluentValidation
 {
     internal partial class PhoneValidator : IPropertyValidator<AnotherPersonModel, string>
     {
-        public string Name => throw new NotImplementedException();
+        public string Name => "Phone";
 
         public string GetDefaultMessageTemplate(string errorCode)
         {
@@ -19,7 +19,7 @@ namespace validation_approaches.FluentValidation
             else return false;
         }
 
-        [GeneratedRegex("^\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$")]
+        [GeneratedRegex("^\\+?[1-9][0-9]{7,14}$")]
         private static partial Regex PhoneCheck();
     }
 }

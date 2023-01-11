@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using validation_approaches.FluentValidation;
 using validation_approaches.ModelBindingValidation;
 
 namespace validation_approaches.Controllers
@@ -46,6 +47,13 @@ namespace validation_approaches.Controllers
         //ActionFilter usage. See program.cs how it is implemented for all controllers to validate request
         [HttpPost("ActionFilterTestMethod")]
         public ActionResult ActionFilterTestMethod(Person person)
+        {
+            return Ok();
+        }
+
+        // FluentValidation
+        [HttpPost("FluentValidationTestMethod")]
+        public ActionResult FluentValidationTestMethod(AnotherPersonModel person)
         {
             return Ok();
         }
