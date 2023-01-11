@@ -1,10 +1,9 @@
 ﻿using FluentValidation;
 using FluentValidation.Validators;
-using validation_approaches.ModelBindingValidation;
 
 namespace validation_approaches.FluentValidation
 {
-    internal class PhoneValidator : IPropertyValidator<Person, string>
+    internal class PhoneValidator : IPropertyValidator<AnotherPersonModel, string>
     {
         public string Name => throw new NotImplementedException();
 
@@ -13,7 +12,7 @@ namespace validation_approaches.FluentValidation
             return "This is not a valid phone number.";
         }
 
-        public bool IsValid(ValidationContext<Person> context, string value)
+        public bool IsValid(ValidationContext<AnotherPersonModel> context, string value)
         {
             throw new NotImplementedException();
         }

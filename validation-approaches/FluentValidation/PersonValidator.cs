@@ -3,7 +3,7 @@ using validation_approaches.ModelBindingValidation;
 
 namespace validation_approaches.FluentValidation
 {
-    public class PersonValidator : AbstractValidator<Person>
+    public class PersonValidator : AbstractValidator<AnotherPersonModel>
     {
         public PersonValidator()
         {
