@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
 using FluentValidation.Validators;
+using System.Text.RegularExpressions;
 
 namespace validation_approaches.FluentValidation
 {
-    internal class PhoneValidator : IPropertyValidator<AnotherPersonModel, string>
+    internal partial class PhoneValidator : IPropertyValidator<AnotherPersonModel, string>
     {
         public string Name => throw new NotImplementedException();
 
@@ -14,7 +15,11 @@ namespace validation_approaches.FluentValidation
 
         public bool IsValid(ValidationContext<AnotherPersonModel> context, string value)
         {
-            throw new NotImplementedException();
+            if (value != null) return PhoneCheck().IsMatch(value);
+            else return false;
         }
+
+        [GeneratedRegex("^\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$")]
+        private static partial Regex PhoneCheck();
     }
 }
