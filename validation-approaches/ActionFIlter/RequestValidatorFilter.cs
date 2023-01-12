@@ -7,6 +7,7 @@ namespace validation_approaches.ActionFIlter
     {
         public void OnActionExecuted(ActionExecutedContext context)
         {
+            // Method intentionally left empty.
         }
 
         public void OnActionExecuting(ActionExecutingContext context)

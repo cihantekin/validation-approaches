@@ -7,16 +7,16 @@ namespace validation_approaches.ModelBindingValidation
     {
         [Required]
         [FullNameValidator]
-        public string FullName { get; set; }
+        public string FullName { get; set; } = new ("");
 
         [EmailAddress]
-        public string Email { get; set; }
+        public string Email { get; set; } = new("");
 
         [MaxLength(100)]
-        public string Address { get; set; }
+        public string Address { get; set; } = new("");
 
         [Phone]
-        public string Phone { get; set; }
+        public string Phone { get; set; } = new("");
 
         [Range(0, 120)]
         public int Age { get; set; }

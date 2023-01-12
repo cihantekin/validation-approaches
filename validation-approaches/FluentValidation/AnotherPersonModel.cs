@@ -4,10 +4,10 @@ namespace validation_approaches.FluentValidation
     [PersonValidator]
     public class AnotherPersonModel
     {
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
-        public string Phone { get; set; }
-        public int Age { get; set; }
+        public string FullName { get; set; } = new("");
+        public string Email { get; set; } = new("");
+        public string Address { get; set; } = new("");
+        public string Phone { get; set; } = new("");
+        public int Age { get; set; }    
     }
 }
