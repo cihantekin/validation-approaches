@@ -8,13 +8,13 @@ namespace validation_approaches.ValidatableObject
         [Required]
         [MaxLength(120)]
         [MinLength(1)]
-        public string Title { get; set; }
+        public string Title { get; set; } = new("");
 
-        public string Director { get; set; }
+        public string Director { get; set; } = new("");
 
         [Required]
         [StringLength(500)]
-        public string MovieDetail { get; set; }
+        public string MovieDetail { get; set; } = new("");
 
         public DateTime ReleaseDate { get; set; }
 
