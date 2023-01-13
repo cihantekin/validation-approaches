@@ -14,10 +14,9 @@ namespace validation_approaches.ValidatableObject
 
         [Required]
         [StringLength(500)]
-
-        [DisplayName("Release Date")]
-        public DateTime ReleaseDate { get; set; }
         public string MovieDetail { get; set; }
+
+        public DateTime ReleaseDate { get; set; }
 
         public Genre Genre { get; set; }
 

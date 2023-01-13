@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using validation_approaches.FluentValidation;
 using validation_approaches.ModelBindingValidation;
+using validation_approaches.ValidatableObject;
 
 namespace validation_approaches.Controllers
 {
@@ -51,10 +53,18 @@ namespace validation_approaches.Controllers
             return Ok();
         }
 
-        // FluentValidation
+        //FluentValidation
         [HttpPost("FluentValidationTestMethod")]
         public ActionResult FluentValidationTestMethod(AnotherPersonModel person)
         {
+            return Ok();
+        }
+
+        //IValidatableObject
+        [HttpPost("IValidateObjectTestMethod")]
+        public ActionResult IValidateObjectTestMethod(Movie movie)
+        {
+            Validator.ValidateObject(movie, new ValidationContext(movie));
             return Ok();
         }
     }
